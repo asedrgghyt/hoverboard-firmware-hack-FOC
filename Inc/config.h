@@ -611,8 +611,8 @@
   // #define CONTROL_PWM_LEFT    0         // use RC PWM as input on the LEFT cable. Number indicates priority for dual-input. Disable DEBUG_SERIAL_USART2!
   #define CONTROL_ADC           0         // use ADC as input. Number indicates priority for dual-input. Disable CONTROL_SERIAL_USART2, FEEDBACK_SERIAL_USART2, DEBUG_SERIAL_USART2!
 
-  #define PRI_INPUT1            2, 0, 2000, 4095, 95      // TYPE, MIN, MID, MAX, DEADBAND. See INPUT FORMAT section
-  #define PRI_INPUT2            2, 0, 2000, 4095, 95      // TYPE, MIN, MID, MAX, DEADBAND. See INPUT FORMAT section
+  #define PRI_INPUT1          3, -1000, 0, 1000, 100  // Priority Sideboard can be used to send commands via an iBUS Receiver connected to the sideboard
+  #define PRI_INPUT2          3, -1000, 0, 1000, 100  // Priority Sideboard can be used to send commands via an iBUS Receiver connected to the sideboard
   #define INPUT_BRK           -400      // (-1000 - 0) Change this value to adjust the braking amount
 
   #define FILTER              6553      // 0.1f [-] fixdt(0,16,16) lower value == softer filter [0, 65535] = [0.0 - 1.0].
