@@ -1,4 +1,4 @@
-// Define to prevent recursive inclusion
+// Define to prevent recursive inclusion lisan et commitida saaks
 #ifndef CONFIG_H
 #define CONFIG_H
 
