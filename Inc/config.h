@@ -154,10 +154,10 @@
 // Limitation settings
 #define I_MOT_MAX       15              // [A] Maximum single motor current limit
 #define I_DC_MAX        17              // [A] Maximum stage2 DC Link current limit for Commutation and Sinusoidal types (This is the final current protection. Above this value, current chopping is applied. To avoid this make sure that I_DC_MAX = I_MOT_MAX + 2A)
-#define N_MOT_MAX       2000            // [rpm] Maximum motor speed limit
+#define N_MOT_MAX       4000            // [rpm] Maximum motor speed limit
 
 // Field Weakening / Phase Advance
-#define FIELD_WEAK_ENA  1               // [-] Field Weakening / Phase Advance enable flag: 0 = Disabled (default), 1 = Enabled
+#define FIELD_WEAK_ENA  0               // [-] Field Weakening / Phase Advance enable flag: 0 = Disabled (default), 1 = Enabled
 #define FIELD_WEAK_MAX  6               // [A] Maximum Field Weakening D axis current (only for FOC). Higher current results in higher maximum speed. Up to 10A has been tested using 10" wheels.
 #define PHASE_ADV_MAX   30              // [deg] Maximum Phase Advance angle (only for SIN). Higher angle results in higher maximum speed.
 #define FIELD_WEAK_HI   1500            // (1000, 1500] Input target High threshold for reaching maximum Field Weakening / Phase Advance. Do NOT set this higher than 1500.
@@ -500,7 +500,7 @@
 #ifdef VARIANT_HOVERCAR
   #define FLASH_WRITE_KEY         0x1107  // Flash memory writing key. Change this key to ignore the input calibrations from the flash memory and use the ones in config.h
   #undef  CTRL_MOD_REQ
-  #define CTRL_MOD_REQ            TRQ_MODE  // HOVERCAR works best in TORQUE Mode. VOLTAGE mode is preffered when freewheeling is not desired when throttle is released.
+  #define CTRL_MOD_REQ            VLT_MODE  // HOVERCAR works best in TORQUE Mode. VOLTAGE mode is preffered when freewheeling is not desired when throttle is released.
   #define CONTROL_ADC             0         // use ADC as input. Number indicates priority for dual-input. Disable CONTROL_SERIAL_USART2, FEEDBACK_SERIAL_USART2, DEBUG_SERIAL_USART2!
   #define SIDEBOARD_SERIAL_USART3 1         // Rx from right sensor board: to use photosensors as buttons. Number indicates priority for dual-input. Comment-out if sideboard is not used!
   #define FEEDBACK_SERIAL_USART3            // Tx to   right sensor board: for LED battery indication. Comment-out if sideboard is not used!
@@ -525,25 +525,25 @@
   // #define ELECTRIC_BRAKE_MAX    100         // (0, 500) Maximum electric brake to be applied when input torque request is 0 (pedal fully released).
   // #define ELECTRIC_BRAKE_THRES  120         // (0, 500) Threshold below at which the electric brake starts engaging.
 
-  #define MULTI_MODE_DRIVE                  // This option enables the selection of 3 driving modes at start-up using combinations of Brake and Throttle pedals (see below)
-  #ifdef MULTI_MODE_DRIVE
+  //#define MULTI_MODE_DRIVE                  // This option enables the selection of 3 driving modes at start-up using combinations of Brake and Throttle pedals (see below)
+  //#ifdef MULTI_MODE_DRIVE
       // BEGINNER MODE:     Power ON + Brake [released] + Throttle [released or pressed]
-      #define MULTI_MODE_DRIVE_M1_MAX   200
-      #define MULTI_MODE_DRIVE_M1_RATE  300
-      #define MULTI_MODE_M1_I_MOT_MAX   8
-      #define MULTI_MODE_M1_N_MOT_MAX   100
+      //#define MULTI_MODE_DRIVE_M1_MAX   200
+      //#define MULTI_MODE_DRIVE_M1_RATE  300
+      //#define MULTI_MODE_M1_I_MOT_MAX   8
+      //#define MULTI_MODE_M1_N_MOT_MAX   100
 
       // INTERMEDIATE MODE: Power ON + Brake [pressed] + Throttle [released]
-      #define MULTI_MODE_DRIVE_M2_MAX   500
-      #define MULTI_MODE_DRIVE_M2_RATE  300
-      #define MULTI_MODE_M2_I_MOT_MAX   8
-      #define MULTI_MODE_M2_N_MOT_MAX   200
+      //#define MULTI_MODE_DRIVE_M2_MAX   500
+      //#define MULTI_MODE_DRIVE_M2_RATE  300
+      //#define MULTI_MODE_M2_I_MOT_MAX   8
+      //#define MULTI_MODE_M2_N_MOT_MAX   200
 
       // ADVANCED MODE:    Power ON + Brake [pressed] + Throttle [pressed]
-      #define MULTI_MODE_DRIVE_M3_MAX   2500
-      #define MULTI_MODE_DRIVE_M3_RATE  480
-      #define MULTI_MODE_M3_I_MOT_MAX   15
-      #define MULTI_MODE_M3_N_MOT_MAX   2000
+      //#define MULTI_MODE_DRIVE_M3_MAX   2500
+      //#define MULTI_MODE_DRIVE_M3_RATE  480
+      //#define MULTI_MODE_M3_I_MOT_MAX   15
+      //#define MULTI_MODE_M3_N_MOT_MAX   4000
   #endif
 
 #endif
