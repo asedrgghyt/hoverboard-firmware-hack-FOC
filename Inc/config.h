@@ -148,7 +148,7 @@
 
 // Control selections
 #define CTRL_TYP_SEL    FOC_CTRL        // [-] Control type selection: COM_CTRL, SIN_CTRL, FOC_CTRL (default)
-#define CTRL_MOD_REQ    TRQ_MODE        // [-] Control mode request: OPEN_MODE, VLT_MODE (default), SPD_MODE, TRQ_MODE. Note: SPD_MODE and TRQ_MODE are only available for CTRL_FOC!
+#define CTRL_MOD_REQ    VLT_MODE        // [-] Control mode request: OPEN_MODE, VLT_MODE (default), SPD_MODE, TRQ_MODE. Note: SPD_MODE and TRQ_MODE are only available for CTRL_FOC!
 #define DIAG_ENA        1               // [-] Motor Diagnostics enable flag: 0 = Disabled, 1 = Enabled (default)
 
 // Limitation settings
@@ -528,19 +528,19 @@
   //#define MULTI_MODE_DRIVE                  // This option enables the selection of 3 driving modes at start-up using combinations of Brake and Throttle pedals (see below)
   #ifdef MULTI_MODE_DRIVE
       // BEGINNER MODE:     Power ON + Brake [released] + Throttle [released or pressed]
-      #define MULTI_MODE_DRIVE_M1_MAX   200
-      #define MULTI_MODE_DRIVE_M1_RATE  300
-      #define MULTI_MODE_M1_I_MOT_MAX   8
-      #define MULTI_MODE_M1_N_MOT_MAX   100
+      #define MULTI_MODE_DRIVE_M1_MAX   3000
+      #define MULTI_MODE_DRIVE_M1_RATE  480
+      #define MULTI_MODE_M1_I_MOT_MAX   15
+      #define MULTI_MODE_M1_N_MOT_MAX   4000
 
       // INTERMEDIATE MODE: Power ON + Brake [pressed] + Throttle [released]
-      #define MULTI_MODE_DRIVE_M2_MAX   500
-      #define MULTI_MODE_DRIVE_M2_RATE  300
-      #define MULTI_MODE_M2_I_MOT_MAX   8
-      #define MULTI_MODE_M2_N_MOT_MAX   200
+      #define MULTI_MODE_DRIVE_M2_MAX   3000
+      #define MULTI_MODE_DRIVE_M2_RATE  480
+      #define MULTI_MODE_M2_I_MOT_MAX   15
+      #define MULTI_MODE_M2_N_MOT_MAX   4000
 
       // ADVANCED MODE:    Power ON + Brake [pressed] + Throttle [pressed]
-      #define MULTI_MODE_DRIVE_M3_MAX   2500
+      #define MULTI_MODE_DRIVE_M3_MAX   3000
       #define MULTI_MODE_DRIVE_M3_RATE  480
       #define MULTI_MODE_M3_I_MOT_MAX   15
       #define MULTI_MODE_M3_N_MOT_MAX   4000
