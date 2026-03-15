@@ -154,7 +154,7 @@
 // Limitation settings
 #define I_MOT_MAX       15              // [A] Maximum single motor current limit
 #define I_DC_MAX        17              // [A] Maximum stage2 DC Link current limit for Commutation and Sinusoidal types (This is the final current protection. Above this value, current chopping is applied. To avoid this make sure that I_DC_MAX = I_MOT_MAX + 2A)
-#define N_MOT_MAX       4000            // [rpm] Maximum motor speed limit
+#define N_MOT_MAX       3000            // [rpm] Maximum motor speed limit
 
 // Field Weakening / Phase Advance
 #define FIELD_WEAK_ENA  0               // [-] Field Weakening / Phase Advance enable flag: 0 = Disabled (default), 1 = Enabled
@@ -513,7 +513,7 @@
 
   #define SPEED_COEFFICIENT       16384     // 1.0f
   #define STEER_COEFFICIENT       8192      // 0.5f Only active in Sideboard input
-  // #define ADC_ALTERNATE_CONNECT             // use to swap ADC inputs
+  #define ADC_ALTERNATE_CONNECT             // use to swap ADC inputs
   #define INVERT_R_DIRECTION                // Invert rotation of right motor
   // #define INVERT_L_DIRECTION                // Invert rotation of left motor
   // #define DEBUG_SERIAL_USART3               // right sensor board cable, disable if I2C (nunchuk or lcd) is used!
@@ -531,19 +531,19 @@
       #define MULTI_MODE_DRIVE_M1_MAX   3000
       #define MULTI_MODE_DRIVE_M1_RATE  480
       #define MULTI_MODE_M1_I_MOT_MAX   15
-      #define MULTI_MODE_M1_N_MOT_MAX   4000
+      #define MULTI_MODE_M1_N_MOT_MAX   3000
 
       // INTERMEDIATE MODE: Power ON + Brake [pressed] + Throttle [released]
       #define MULTI_MODE_DRIVE_M2_MAX   3000
       #define MULTI_MODE_DRIVE_M2_RATE  480
       #define MULTI_MODE_M2_I_MOT_MAX   15
-      #define MULTI_MODE_M2_N_MOT_MAX   4000
+      #define MULTI_MODE_M2_N_MOT_MAX   3000
 
       // ADVANCED MODE:    Power ON + Brake [pressed] + Throttle [pressed]
       #define MULTI_MODE_DRIVE_M3_MAX   3000
       #define MULTI_MODE_DRIVE_M3_RATE  480
       #define MULTI_MODE_M3_I_MOT_MAX   15
-      #define MULTI_MODE_M3_N_MOT_MAX   4000
+      #define MULTI_MODE_M3_N_MOT_MAX   3000
   #endif
 
 #endif
